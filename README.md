@@ -1,17 +1,17 @@
 # DATOS PERSONALES
 
 ## Nombre Completo  
-Felix Maturano Zarate
+- Felix Maturano Zarate
 
 ## Carrera  
-Ciencias de la Computación
+- Ciencias de la Computación
 
 ## CU  
-111-531
+- 111-531
 
 ## CI  
-7543963
+- 7543963
 
 ## Correo Electrónico  
-maturanozaratefelix@gmail.com  
-maturano.zarate.felix@usfx.bo
+- maturanozaratefelix@gmail.com  
+- maturano.zarate.felix@usfx.bo
