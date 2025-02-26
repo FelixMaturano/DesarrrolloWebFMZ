@@ -1,0 +1,42 @@
+nav.container{
+
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 400px;
+    padding-left: 40px;
+}
+
+
+nav.container ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    padding: auto;
+    background-color: black;
+    color: white;
+    list-style: none;
+
+}
+nav.container ul li{
+    padding: 12px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-top: 10px;
+    /* background-color: orange; */
+    font-family: "normativa variable", ul-sans-serif, sy;
+}
+ul li a:hover{
+    padding-left: 0px;
+    background-color: orange;
+    color: white;
+}
+nav.container ul li a {
+    color: white;
+    text-decoration: none;
+}
+.icono{
+width: 30px;
+
+}
