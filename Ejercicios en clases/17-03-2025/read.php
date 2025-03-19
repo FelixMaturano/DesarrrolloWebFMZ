@@ -2,9 +2,19 @@
 $sql = "SELECT id, Nombre, Apellido, Fecha_nacimiento, Sexo, Correo FROM personas"; 
 $resultado = $con->query($sql);
 ?>
-
-<table style = "border-collapse: collapse" border="1">
-    <thead>
+<style>
+    body{
+        background-color: #323232;
+    }
+    .container{
+        background-color: white;
+    }
+    button{
+        background-color: #6C757D;
+    }
+</style>
+<table style = "border-collapse: collapse" border="1"  class="container">
+    <thead style = "background-color: green">
         <tr>
             <th width = "100px">Nombres</th>
             <th width = "150px">Apellidos</th>
@@ -24,7 +34,7 @@ $resultado = $con->query($sql);
         <td><?php echo $row['Sexo'];?></td>
         <td><?php echo $row['Correo'];?></td>
 
-        <td><a href="formeditar.php?id=<?php echo $row['id'];?>"> Editar </a><a href = "delete.php?id=<?php echo $row['id'];?>"> Eliminar </a></td>
+        <td><button><a href="formeditar.php?id=<?php echo $row['id'];?>"> Editar </a></button><button><a href = "delete.php?id=<?php echo $row['id'];?>">Eliminar</a></button></td>
     </tr>
    <?php }?>
 </table>
