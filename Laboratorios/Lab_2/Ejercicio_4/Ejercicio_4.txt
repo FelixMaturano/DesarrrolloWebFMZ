@@ -1,0 +1,8 @@
+4. Desarrolla una funcion llamada ordenarPalabras() que reciba 
+como parametro  un arreglo de palabras. La funcion debe ordenar las 
+palabras alfabeticamente y devolver un arreglo ordenado. Luego, crea 
+formulario que solicite al usuario el numero de palabras a introducir
+ingresar, este formulario llama a otro denominado llenar.php que solicita
+las palabras luego este llama a ordenar.php que llamar a la funcion 
+ordenarPalabras() y mostrar el arreglo ordenado en un lista, con un 
+borde de color rojo y fondo de color amarillo, centrado.

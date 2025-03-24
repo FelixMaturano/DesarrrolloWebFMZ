@@ -1,0 +1,20 @@
+2. Crea un formulario que permita al usuario ingresar una temperatura 
+y seleccionar una unidad de medida(Celsius, Fahrenheit, Kelvin).
+PHP debe realizar la conversion de temperatura a las otras dos unidades
+y mostrar los resultados en un formato tabularcon el borde de color 
+verde y fondo de color blanco. Las equivalencias para convertir de 
+Celsius(*C) a Fahrenheit(*F) y Kelvin(K) son las siguientes.
+De Celsius a Fahrenheit:
+ La formula de conversion es:
+ F-(C*9/5)+32
+ Donde:
+ + F es la temperatura en Fahrenheit.
+ + C es la temperatura en Celsius.
+
+ De Celsius a Kelvin:
+ La conversion es:
+
+ K-C+273.15
+ Donde:
+ + K es la temperatura en Kelvin.
+ + C es la temperatura en Celsius.

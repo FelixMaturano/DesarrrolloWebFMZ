@@ -1,0 +1,5 @@
+3. Realiza un programa en PHP que permita generar los primeros n numeros
+primos. El usuario debe ingresar la cantidad de numeros primos que desea 
+generar mediante el formulario. Luego se debe llamar calcular.php que 
+mostrar los numeros primos en una lista ordenada, con un borde de color
+verde y fondo de color amarillo.
