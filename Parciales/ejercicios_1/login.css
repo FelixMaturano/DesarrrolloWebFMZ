@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    margin: auto;
+    background-color: blue;
+    width: 400px;
+    height: 600px;
+    border-radius: 10px;
+}
+
+.login{
+    margin: 70px;
+    background-color: white;
+    height: 400px;
+    text-align: center;
+    border-radius: 2px;
+   
+    
+}
+
+.btn{
+    border-radius: 4px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 20px;
+    padding: 10px 70px;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+    margin: 40px 40px 10px 40px;
+}

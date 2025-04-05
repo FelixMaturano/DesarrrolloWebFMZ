@@ -1,0 +1,38 @@
+
+// session_start();
+// // Verificar si el usuario está logueado
+// if (!isset($_SESSION['usuario'])) {
+//     // Si viene del formulario de login, verificar credenciales
+//     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//         $usuario = $_POST['usuario'];
+//         $password = $_POST['password'];
+        
+//         // Conectar a la base de datos
+//         $conn = new mysqli("localhost", "root", "", "biblioteca");
+        
+//         if ($conn->connect_error) {
+//             die("Conexión fallida: " . $conn->connect_error);
+//         }
+        
+//         // Consultar la tabla usuarios
+//         $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND password = '$password'";
+//         $result = $conn->query($sql);
+        
+//         if ($result->num_rows > 0) {
+//             $row = $result->fetch_assoc();
+//             $_SESSION['usuario'] = $usuario;
+//             $_SESSION['nivel'] = $row['nivel'];
+//         } else {
+//             header("Location: login.html");
+//             exit();
+//         }
+        
+//         $conn->close();
+//     } else {
+//         header("Location: login.html");
+//         exit();
+//     }
+// }
+
+$result =  "SELECT libros.id, libros.fotografia, libros.titulo, libros.autor, libros.editorial, libros.anio, usuarios.id,carreras.id FROM libros
+LEFT JOIN usuarios ON usuarios.id=libros.id LEFT JOIN carreras ON carreras.id =usuarios.id ";
