@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 2 - Calendario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        select, input {
+            padding: 5px;
+            background-color: #F79646;
+            border: 1px solid #404040;
+        }
+        button {
+            padding: 5px 15px;
+            background-color: #F79646;
+            border: 1px solid #404040;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="calendario.php" method="POST">
+        <label for="mes">Mes:</label>
+        <select name="mes" id="mes" style="background-color: #F79646;">
+            <option value="1">Enero</option>
+            <option value="2">Febrero</option>
+            <option value="3">Marzo</option>
+            <option value="4">Abril</option>
+            <option value="5">Mayo</option>
+            <option value="6">Junio</option>
+            <option value="7">Julio</option>
+            <option value="8">Agosto</option>
+            <option value="9">Septiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
+        </select>
+
+        <label for="anio">Año:</label>
+        <input type="number" name="anio" id="anio" value="2023" min="2000" max="2030" style="background-color: #F79646;">
+
+        <button type="submit" style="background-color: #F79646;">Enviar</button>
+    </form>
+</body>
+</html>

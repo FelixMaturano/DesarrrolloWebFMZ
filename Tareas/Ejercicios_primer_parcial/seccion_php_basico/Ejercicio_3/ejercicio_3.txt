@@ -1,0 +1,3 @@
+3. Programar un PHP que solicite mediante formulario GET el valor
+de b y h luego llamar a la pagina area.php que calcula el area 
+de un triangulo cuya formula es a=(b*h)/2.

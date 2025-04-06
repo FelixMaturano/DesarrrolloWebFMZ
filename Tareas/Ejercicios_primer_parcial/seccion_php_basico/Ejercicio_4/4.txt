@@ -1,0 +1,5 @@
+Programa en PHP que solicite mediante formulario por GET el valor de n 
+(del 1 al 7) que llame a la pagina dia.php recupere el valor introducido
+y en base a ese al valor introducido muestre una lista de seleccion con
+los dias de la semana mostrando seleccionado el dia seleccionado.
+por ejemplo n = 3;
