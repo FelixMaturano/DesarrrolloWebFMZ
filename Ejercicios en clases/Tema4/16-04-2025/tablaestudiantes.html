@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            margin: 100px auto auto auto;
+        }
+        th,td{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Creamos un arreglo de Objetos
+        var estudiantes = [
+        {nombre: "Felix", edad: 24, carrera:"CICO"},
+        {nombre: "Yecenia", edad: 21, carrera:"enfermeria"},
+        {nombre: "Tania", edad: 20, carrera:"Biotegnologia"}
+        ];
+
+        // Objeto JS a texto JSON
+        jsonestudiantes = JSON.stringify(estudiantes);
+
+        // JSON a objeto JS
+        nuevosestudiantes = JSON.parse(jsonestudiantes);
+
+        //Mostrar los resultados en la consola
+        console.log(estudiantes);
+        console.log(jsonestudiantes);
+        console.log(nuevosestudiantes);
+
+        // Generacion de tabla html desde JS
+        var html = `
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Carrera</th>
+                </tr>`;
+            estudiantes.forEach(function(estudiante){
+                html +=`<tr>
+                    <td>${estudiante.nombre}</td>
+                    <td>${estudiante.edad}</td>
+                    <td>${estudiante.carrera}</td>
+                </tr>`;
+            });
+            
+        html += `</table>`;
+        
+        console.log(html);
+        document.write(html);
+    </script>
+</body>
+</html>

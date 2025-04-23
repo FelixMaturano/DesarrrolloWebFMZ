@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p#resultado{
+            color: red;
+            font-size: 20px;
+            background-color: lightblue;
+            border: 1px solid black;
+            padding: 10px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <label for="a">a</label>
+    <input type="number" name="a" id="a" value="0">
+    <br>
+    <label for="b">b</label>
+    <input type="number" name="b" id="b" value="0">
+    <br>
+    <input type="button" value="Calcular Mayor" onclick="clacularMayor()">
+
+
+    <p id="resultado"></p>
+
+
+    <script>
+        function clacularMayor() {
+            var a =parseInt( document.getElementById("a").value);
+            var b = parseInt(document.getElementById("b").value);
+            if (a > b){
+            document.getElementById("resultado").innerHTML = "El mayor es: " + a;
+            }
+            else
+                document.getElementById("resultado").innerHTML = "El mayor es: " + b;
+        }   
+    </script>
+
+</body>
+</html>

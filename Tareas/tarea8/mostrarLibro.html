@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 30px;
+            background-color: aliceblue;
+        }
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            color: red;
+        }
+        ul{
+            list-style-type: none;
+            color: blue;
+        }
+        strong{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        /*3. Escribir el código para solicitar los datos de un libro 
+        (titulo,autor, editorial ,anio) mediante promp con esos datos 
+        crear el objeto libro  y el metodo mostrar que muestra los
+         datos del libro en pantalla*/
+
+
+        var libro = {
+            titulo: prompt('Titulo: '),
+            autor: prompt('autor: '),
+            editorial: prompt('editorial'),
+            anio: prompt('anio'),
+            mostrar: function(){
+            html =`<ul>
+                <h1> Datos del libro</h1>
+                <ul>
+                    <li><strong>Titulo: </strong> ${this.titulo}</li>
+                    <li><strong>Autor:</strong> ${this.autor}</li>
+                    <li><strong>Editorial:</strong> ${this.editorial}</li>
+                    <li><strong>Anio:</strong> ${this.anio}</li>
+                </ul>`;
+            document.write(html);
+        }};
+
+        // llamamos el metodo mostrar 
+        libro.mostrar();
+    </script>
+</body>
+</html>

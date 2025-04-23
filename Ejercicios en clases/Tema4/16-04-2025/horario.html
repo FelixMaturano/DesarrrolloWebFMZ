@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        
+        }
+        th,td{
+            border: 1px solid black;
+           
+        }
+        ul{
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <script>
+          // Simulación de otras materias (para el ejemplo)
+          var materias = [
+          {
+              nombre: "Desarrollo Web",
+              sigla: "SIS256",
+              horarios: [
+                  {dia: "Lunes", hora: "16:00-18:00", aula: "B006"},
+                  {dia: "Miercoles", hora: "16:00-18:00", aula: "B006"}
+              ]
+          },
+          {
+              nombre: "Bases de Datos II",
+              sigla: "SIS324",
+              horarios: [
+                  {dia: "Martes", hora: "9:00-11:00", aula: "A104"},
+                  {dia: "Jueves", hora: "9:00-11:00", aula: "A104"}
+              ]
+          },
+          {
+              nombre: "Redes",
+              sigla: "SIS435",
+              horarios: [
+                  {dia: "Lunes", hora: "7:00-9:00", aula: "LAB3"},
+                  {dia: "Viernes", hora: "7:00-9:00", aula: "LAB3"}
+              ]
+          },
+          {
+              nombre: "Inteligencia Artificial",
+              sigla: "SIS543",
+              horarios: [
+                  {dia: "Martes", hora: "14:00-16:00", aula: "B205"},
+                  {dia: "Jueves", hora: "14:00-16:00", aula: "B205"}
+              ]
+          }
+      ];
+              // Función para obtener la materia según el día y la hora
+              function getMateriaInfo(dia, hora) {
+                for (let i = 0; i < materias.length; i++) {
+                    for (let j = 0; j < materias[i].horarios.length; j++) {
+                        if (materias[i].horarios[j].dia === dia && materias[i].horarios[j].hora === hora) {
+                            return {
+                                nombre: materias[i].nombre,
+                                sigla: materias[i].sigla,
+                                aula: materias[i].horarios[j].aula
+                            };
+                        }
+                    }
+                }
+                return null;
+            }
+            
+            // Definimos las franjas horarias y los días
+            const franjas = ["7:00-9:00", "9:00-11:00", "11:00-13:00","13:00-14:00", "14:00-16:00", "16:00-18:00"];
+            const dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
+            html = `<h3>Horario Completo</h3>
+                <table>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                    </tr>`;
+        
+        // Crear filas para cada franja horaria
+        franjas.forEach(franja => {
+            html += `<tr>
+                <td>${franja}</td>`;
+            
+            // Para cada día, verificamos si hay alguna materia en esa franja horaria
+            dias.forEach(dia => {
+                const materiaInfo = getMateriaInfo(dia, franja);
+                if (materiaInfo) {
+                    html += `<td class="materia-cell">
+                        ${materiaInfo.nombre}<br>
+                        ${materiaInfo.sigla}<br>
+                        Aula: ${materiaInfo.aula}
+                    </td>`;
+                } else {
+                    html += `<td class="empty-cell"></td>`;
+                }
+            });
+            
+            html += `</tr>`;
+        });
+        
+        html += `</table>`;
+        document.write(html);
+    </script>
+</body>
+</html>
