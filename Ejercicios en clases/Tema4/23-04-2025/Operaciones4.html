@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            font-weight: bold;
+            border: 1px solid black;
+            gap: 15px;
+            align-items: center;
+            padding: 20px;
+        }
+        input[type="number"]{
+            border: 2px solid black;
+            width: 60px;
+            height: 25px;
+            margin: 10px;
+            text-align: center;
+        }
+        #btn{
+            width: 80px;
+            background-color: yellow;
+            font-weight: bold;
+            border: 2px solid yellow;
+        }
+        .mostrar{
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        #resultado{
+            background-color: yellow;
+            width: 200px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <label for="tabla">Tabla</label>
+        <input type="number" id="tabla">
+
+        <div class="ope-simple">
+            <label><input type="checkbox" name="operacion" value="sumar"> Sumar</label><br>
+            <label><input type="checkbox" name="operacion" value="restar"> Restar</label><br>
+            <label><input type="checkbox" name="operacion" value="multiplicar"> Multiplicar</label><br>
+            <label><input type="checkbox" name="operacion" value="dividir"> Dividir</label><br>
+        </div>
+
+        <label for="hasta">Hasta</label>
+        <input type="number" id="hasta">
+
+        <input type="button" value="Calcular" id="btn" onclick="calcular()">
+    </div>
+
+    <!-- ESTE DIV AHORA ESTÁ ABAJO DEL TODO -->
+    <div class="mostrar">
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function calcular() {
+            const numero = parseInt(document.getElementById('tabla').value);
+            const hasta = parseInt(document.getElementById('hasta').value);
+            const checkboxes = document.querySelectorAll('input[name="operacion"]:checked');
+            const resultado = document.getElementById('resultado');
+            let salida = '';
+
+            checkboxes.forEach(checkbox => {
+                const operacion = checkbox.value;
+                salida += `<strong>${operacion.toUpperCase()}:</strong><br>`;
+                for (let i = 1; i <= hasta; i++) {
+                    let res;
+                    switch (operacion) {
+                        case 'sumar':
+                            res = numero + i;
+                            salida += `${numero} + ${i} = ${res}<br>`;
+                            break;
+                        case 'restar':
+                            res = numero - i;
+                            salida += `${numero} - ${i} = ${res}<br>`;
+                            break;
+                        case 'multiplicar':
+                            res = numero * i;
+                            salida += `${numero} × ${i} = ${res}<br>`;
+                            break;
+                        case 'dividir':
+                            res = i === 0 ? '∞' : (numero / i).toFixed(2);
+                            salida += `${numero} ÷ ${i} = ${res}<br>`;
+                            break;
+                    }
+                }
+                salida += '<br>';
+            });
+
+            resultado.innerHTML = salida || 'Selecciona al menos una operación.';
+        }
+    </script>
+</body>
+</html>
