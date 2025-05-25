@@ -1,0 +1,14 @@
+#content{
+    display: flex;
+    
+}
+#contenido{
+    background-color: aqua;
+}
+#menu ul{
+    list-style-type: none;
+    
+}
+a {
+    text-decoration: none;
+}

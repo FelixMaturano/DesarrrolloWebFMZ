@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+</head>
+<body>
+    <h2>Conversor de Temperatura</h2>
+    <form action="convertir.php" method="POST">
+        <label for="temperatura">Ingrese la temperatura:</label>
+        <input type="number" name="temperatura" id="temperatura" required step="any">
+
+        <label for="unidad">Seleccione la unidad:</label>
+        <select name="unidad" id="unidad" required>
+            <option value="C">Celsius (°C)</option>
+            <option value="F">Fahrenheit (°F)</option>
+            <option value="K">Kelvin (K)</option>
+        </select>
+
+        <button type="submit">Convertir</button>
+    </form>
+</body>
+</html>

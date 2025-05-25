@@ -1,0 +1,3 @@
+Crea un programa en PHP Que solicite al usuario ingresar a un número entero positivo n, 
+que debe llamar calcular.php que calcula y mostrar la suma de los dígitos de n.
+ Por ejemplo si n=123 la suma de los dígitos sería 1 + 2 + 3= 6.

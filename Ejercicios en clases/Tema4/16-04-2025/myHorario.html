@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var materias = [
+        {
+            nombre: "Redes de datos II",
+            sigla: "SIS 252",
+            horarios:[
+            {dia:"Martes", hora: "7:00-9:00", aula: "I-101"},
+            {dia:"Miercoles", hora: "7:00-9:00", aula: "I 101"}]
+        },
+        {
+            nombre: "I Artificial",
+            sigla: "SIS 420",
+            horarios:[
+            {dia:"Martes", hora: "11:00-13:00", aula: "B-2006"},
+            {dia:"Miercoles", hora: "9:00-11:00", aula: "B-206"}]
+        },
+        {
+            nombre: "Desarrollo Web",
+            sigla: "SIS 252",
+            horarios:[
+            {dia:"Lunes", hora: "16:00-18:00", aula: "B-206"},
+            {dia:"Miercoles", hora: "16:00-18:00", aula: "B-206"}]
+        },
+        {
+            nombre: "Infraestructura",
+            sigla: "SIS 313",
+            horarios:[
+            {dia:"Martes", hora: "9:00-11:00", aula: "B-006"},
+            {dia:"Jueves", hora: "9:00-11:00", aula: "B-006"}]
+        }];
+
+        function getMateriaInfo(dia, hora){
+            for(let i=0; i<materias.length; i++){
+                for(let j=0; j< materias[i].horarios.length; j++){
+                    if(materias[i].horarios[j].dia === dia && materias[i].horarios[j].hora === hora){
+                        return{
+                            nombre: materias[i].nombre,
+                            sigla: materias[i].sigla,
+                            aula: materias[i].horarios[j].aula
+                        };
+                    }
+                }
+            }
+        }
+        const franjas = ["7:00-9:00", "9:00-11:00", "11:00-13:00", "13:00-14:00", "14:00-16:00", "16:00-18:00"];
+        const dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
+
+        let html = `<h3>Horario Completo</h3>
+        <table>
+            <tr>
+                <th>Hora</th>`;
+        
+        dias.forEach(dia => {
+            html += `<th>${dia}</th><th>Aula</th>`;
+        });
+    
+        html += `</tr>`;
+    
+        franjas.forEach(franja => {
+            html += `<tr><td>${franja}</td>`;
+            dias.forEach(dia => {
+                const info = getMateriaInfo(dia, franja);
+                if (info) {
+                    html += `<td>${info.nombre}<br>${info.sigla}</td><td>${info.aula}</td>`;
+                } else {
+                    html += `<td></td><td></td>`;
+                }
+            });
+            html += `</tr>`;
+        });
+    
+        html += `</table>`;
+        document.write(html);  
+
+    </script>
+</body>
+</html>

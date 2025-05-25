@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var libros = [
+        {titulo: "Cien anios de soledad", autor: "Gabriel Garcia Marquez", anio:1967},
+        {titulo: "Don quijote de la Mancha", autor: "Miguel de Cervantes", anio:1605},
+        {titulo: "La sombra del viento", autor: "Carlos Ruiz Zafon", anio:2001}
+        ];
+
+        // Convertir a JSON
+        jsonlibros = JSON.stringify(libros);
+
+        // De JSON  a Objeto JS
+        nuevoslibros = JSON.parse(jsonlibros);
+
+        //Mostrando en la consola el (original, JSON y convertido)
+        console.log(libros);
+        console.log(jsonlibros);
+        console.log(nuevoslibros);
+
+        // Crear una tabla HTML con los datos de los libros usando forEach.
+        var html = `<table>
+            <tr>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Anio</th>
+            </tr>`;
+        libros.forEach(function(libro){
+            html +=`<tr>
+                <td>${libro.titulo}</td>
+                <td>${libro.autor}</td>
+                <td>${libro.anio}</td>
+            </tr>`;
+        });
+        html +=`</table>`;
+
+        console.log(html);
+        document.write(html);
+    </script>
+</body>
+</html>

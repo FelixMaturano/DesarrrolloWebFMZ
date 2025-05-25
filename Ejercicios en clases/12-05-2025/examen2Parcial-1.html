@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Segundo Parcial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin:40px;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            width: 70%;
+            margin: auto;
+        }
+        .main-content {
+            display: flex;
+            flex: 1;
+            border: 3px solid #c71585;
+        }
+        #sidebar {
+            width: 190px;
+            border-right: 2px solid #c71585;
+            padding: 5px;
+        }
+        #principal {
+            flex: 1;
+            padding: 10px;
+        }
+        #mensaje {
+            padding: 10px;
+            background: #e0e0e0;
+            font-weight: bold;
+        }
+        #menuBtn {
+            background-color: #cc0000;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            width: 100px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .footer {
+            display: flex;
+            background-color: #1a5276;
+            color: white;
+            padding: 0;
+        }
+        .sidebar-btn {
+            background-color: #1a5276;
+            color: white;
+            border: 2px solid #000;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #sidebar {
+        width: 190px;
+        border-right: 2px solid #c71585;
+        padding: 5px;
+
+        /* Nuevo: convertir a grilla de dos columnas */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px; /* espacio entre botones */
+        justify-items: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table td {
+            text-align: center;
+            padding: 10px;
+        }
+        table img {
+            width: 50px;
+            height: 75px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            transition: transform 0.2s;
+        }
+        table img:hover {
+            transform: scale(1.1);
+        }
+        #modal {
+            display: none;
+            position: fixed;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 250px;
+            background: white;
+            border: 2px solid black;
+            padding: 20px;
+            z-index: 1000;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            border-radius: 5px;
+        }
+        #modal img {
+            width: 200px;
+            height: 600px;
+            object-fit: contain;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        form {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        form input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        form button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body onload="cargarMenu()">
+    <div class="container">
+        <div class="main-content">
+            <div id="sidebar">
+                <!-- Botones del menú se cargarán aquí -->
+            </div>
+            <div id="principal">
+                <div id="mensaje"></div>
+                <!-- Contenido principal se cargará aquí -->
+            </div>
+        </div>
+        <div class="footer">
+            <button id="menuBtn" onclick="cargarMenu()">Menu</button>
+            <div style="flex-grow: 1;"></div>
+        </div>
+    </div>
+    
+    <div id="overlay"></div>
+    <div id="modal">
+        <img id="imagenModal" src="">
+        <br><br>
+        <button onclick="cerrarModal()">Aceptar</button>
+    </div>
+    
+    <script>
+        // Datos del estudiante - Se deberían obtener de alguna fuente de datos
+        const estudiante = {
+            nombre: "Juan Pérez",
+            carnet: "12345678"
+        };
+        
+        function cargarMenu(){
+            // Cargar los botones directamente en el sidebar en lugar de usar fetch
+            document.getElementById('sidebar').innerHTML = `
+                <button class="sidebar-btn" onclick="cargarPregunta(1)">1</button>
+                <button class="sidebar-btn" onclick="cargarPregunta(2)">2</button>
+                <button class="sidebar-btn" onclick="cargarPregunta(3)">3</button>
+                <button class="sidebar-btn" onclick="cargarPregunta(4)">4</button>
+                <button class="sidebar-btn" onclick="cargarPregunta(5)">5</button>
+            `;
+            
+            document.getElementById("mensaje").textContent = `Nombre: ${estudiante.nombre} - Carnet Universitario: ${estudiante.carnet}`;
+            
+            // Al cargar por primera vez, mostramos la pregunta 1 (según el enunciado)
+            cargarPregunta(1);
+        }
+        
+        function cargarPregunta(nro){
+            if(nro === 1){
+                // La pregunta 1 es simplemente mostrar los botones y el mensaje
+                document.getElementById("principal").innerHTML = `
+                    <div class="pregunta">
+                        <h2>Pregunta 1</h2>
+                        <p>Bienvenido al examen del segundo parcial. Utilice los botones del menú para navegar entre las preguntas.</p>
+                    </div>
+                `;
+            } else if(nro === 2){
+                fetch("galeria.php")
+                .then(res => res.text())
+                .then(html => document.getElementById("principal").innerHTML = html)
+                .catch(error => {
+                    console.error('Error al cargar la galería:', error);
+                    document.getElementById("principal").innerHTML = "Error al cargar la galería. Por favor, intente nuevamente.";
+                });
+            } else if(nro === 3){
+                fetch("formulario.html")
+                .then(res => res.text())
+                .then(html => document.getElementById("principal").innerHTML = html)
+                .catch(error => {
+                    console.error('Error al cargar el formulario:', error);
+                    document.getElementById("principal").innerHTML = "Error al cargar el formulario. Por favor, intente nuevamente.";
+                });
+            } else {
+                document.getElementById("principal").innerHTML = `<p>Pregunta ${nro} aún no implementada.</p>`;
+            }
+        }
+        
+        function mostrarModal(imagen){
+            document.getElementById("imagenModal").src = imagen;
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("modal").style.display = "block";
+        }
+        
+        function cerrarModal(){
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("modal").style.display = "none";
+        }
+        
+        // Cerrar modal al hacer clic en el overlay
+        document.getElementById("overlay").addEventListener("click", cerrarModal);
+    </script>
+</body>
+</html>

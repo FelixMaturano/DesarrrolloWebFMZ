@@ -1,0 +1,98 @@
+.container{
+    width: 900px;
+    border: 1px solid black;
+    margin: 0 auto;
+    text-align: center;
+   
+}
+header{
+    width: 100%;
+    background-color: #FABF8F;
+}
+.title1{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.title2{
+    display: flex;
+    width: 100%;
+    border: 1px solid black;
+}
+.sis{
+    width: 50%;
+    background-color: #D9D9D9;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid black;
+}
+.cic{
+    width: 50%;
+    background-color: #92D050;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid black;
+}
+.navegacion{
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    background-color: #333;
+}
+.title{
+    color: #FFC000;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 20px;
+}
+.button{
+    background-color: #FFC000;
+    color:black;
+    font-weight: bold;
+    padding: 5px 15px;
+    border: 2px solid red;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.buttons{
+    margin-left: auto;
+    display: flex;
+}
+.contenido{
+    display: flex;
+    width: 100%;
+}
+.barra{
+    width: 170px;
+    height: 210px;
+    border: 1px solid black;
+    padding: 5px;
+}
+.imagenes{
+    width: 100%;
+    background-color: #D9D9D9;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.ima1, .ima2 {
+    width: 45%; /* Ajuste del tamaño para que quepan en la misma línea */
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Asegura que la imagen y el texto estén en columna */
+    align-items: center; /* Centra los elementos en la columna */
+}
+
+img {
+    width: 54%; /* Ajusta el tamaño de la imagen según necesidad */
+    height: auto;
+}
+.id{
+    border: 1px solid black;
+    margin-left: 0 auto;
+    text-align: right;
+    font-size: 20px;
+}

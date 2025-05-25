@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        
+        }
+        th,td{
+            border: 1px solid black;
+           
+        }
+        ul{
+            list-style-type: none;
+        }
+        .color{
+            background-color: aqua;
+        }
+        .colorear{
+            color: blueviolet;
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+        var materia = {
+            nombre: "Desarrollo Web",
+            sigla: "SIS256",
+            grupo: 2,
+            docente:{nombre:"Carlos", apellido:"Montellano"},
+            horarios:[{dia:"Lunes", hora:"16:00-18:00", aula:"B006"},
+                    {dia:"Miercoles", hora:"16:00-18:00", aula:"B006"}],
+            alumnos:[{nombre:"Felix", apellido:"Maturano", cu:"111-531"},
+                     {nombre:"Dariel", apellido:"Lopez", cu:"111-432"},
+                     {nombre:"Martina", apellido:"Zarate", cu:"35-501"}],
+            examenes:["2025-04-15","2025-06-15","2025-06-30","2025-07-05"]
+        }
+
+        function getMateriaInfo(dia, hora) {
+            for (let j = 0; j < materia.horarios.length; j++) {
+                if (materia.horarios[j].dia === dia && materia.horarios[j].hora === hora) {
+                    return {
+                        nombre: materia.nombre,
+                        sigla: materia.sigla,
+                        aula: materia.horarios[j].aula
+                    };
+                }
+            }
+            return null;
+        }
+        
+        html = `<h1>Materia</h1>
+                <hr>
+                <ul>
+                    <li>Nombre: ${materia.nombre}</li>
+                    <li>Sigra: ${materia.sigla}</li>
+                    <li>Grupo: ${materia.grupo}</li>
+                </ul>
+                <hr>
+                <ul>
+                    <li> <strong>Docente:</strong></li>
+                    <li>Nombre:${materia.docente.nombre}</li>
+                    <li>Apellido:${materia.docente.apellido}</li>
+                </ul>
+                <hr>`;
+
+                const horas = ["7:00-9:00", "9:00-11:00", "11:00-13:00", "13:00-14:00", "14:00-16:00", "16:00-18:00"];
+                const dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
+
+                html +=`<h3>Horario Completo</h3>
+                <table>
+                    <tr>
+                        <th>Horas</th>`;
+                dias.forEach(dia=>{
+                    html += `<th class = 'colorear'>${dia}</th><th>Aula</th>`;
+                });
+
+                html +=`</tr>`;
+
+                horas.forEach(hora =>{
+                    html +=`<tr><td>${hora}</td>`;
+                        dias.forEach(dia=>{
+                            const info = getMateriaInfo(dia, hora);
+                            if(info){
+                                html +=`<td class = 'color'>${info.nombre}<br>${info.sigla}</td><td class = 'color'>${info.aula}</td>`;
+                            }else{
+                                html +=`<td></td><td></td>`;
+                            }
+                        });
+                        html +=`</tr>`;
+                });
+                html +=`</table>`;
+                
+                html +=`
+                <hr>
+                <h3> Lista de Alumnos</h3>
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>CU</th>
+                    </tr>`;
+                materia.alumnos.forEach(function(alumno){
+                    html +=`<tr>
+                        <td>${alumno.nombre}</td>
+                        <td>${alumno.apellido}</td>
+                        <td>${alumno.cu}</td>
+                        </tr>`;
+                });
+                html +=`</table>
+                <hr>
+                <h3> Fechas de los Examenes</h3>
+                <table>
+                    <tr>
+                        <th>Primer parcial</th>
+                        <th>Segundo parcial</th>
+                        <th>Examen Final</th>
+                        <th>Segunda instancia</th>
+                    </tr>
+                    <tr>
+                        <td> ${materia.examenes[0]}</td>
+                        <td> ${materia.examenes[1]}</td>
+                        <td> ${materia.examenes[2]}</td>
+                        <td> ${materia.examenes[3]}</td>
+                    </tr>
+                </table>`;
+        document.writeln(html);
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>palindromo</title>
+    <style>
+        body{
+            display: flex;
+           justify-content: center;
+           align-items: center;
+            background-color: aquamarine;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="hola"><h1>Palabras palindromos</h1>
+    <script>
+        let palabra = prompt('Escriba la palabra o frase que quiere saber si es palindrome: ');
+    
+        function palindrome(palabra) {
+            const palabraUno = palabra
+                .toLowerCase()
+                .replace(/\s/g, '')
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/[^a-z0-9]/g, '');
+    
+            const arrayValues = palabraUno.split('');
+            const reversePalabra = arrayValues.reverse();
+            const reverseString = reversePalabra.join('');
+    
+            if(palabraUno == reverseString) {
+                alert('Es palindrome');
+            } else {
+                alert('No es palindrome');
+            }
+        }
+    
+        palindrome(palabra);
+    </script>
+    
+</body>
+</html>

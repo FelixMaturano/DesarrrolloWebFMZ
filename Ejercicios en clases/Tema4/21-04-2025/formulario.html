@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action=""method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre"required>
+    <label for="apellido">Apellido</label>
+    <input type="text" name="apellido" id="apellido"required>
+    <label for="sexo">Sexo</label>
+    <input type="radio" name="sexo" id="sexo_varon" value="varon" required>varon
+    <input type="radio" name="sexo" id="sexo_mujer" value="mujer"required>mujer
+    <input type="button" value="Enviar" onclick="mostrar()">
+</form>
+<script>
+    function mostrar(){
+        var nombre = document.getElementById("nombre").value;
+        var apellido = document.getElementById("apellido").value;
+        var sexo = document.getElementsByName("sexo");
+
+        if(sexo[0].checked){
+            alert("Hola" + nombre +" " +apellido + "eres un varon");
+        }else{
+            
+            alert("Hola" + nombre +" " +apellido + "eres una mujer");
+        }
+    }
+</script>
+
+
+</body>
+</html>

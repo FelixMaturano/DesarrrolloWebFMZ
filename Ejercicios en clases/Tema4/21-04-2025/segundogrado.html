@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p#resultado{
+            color: red;
+            font-size: 20px;
+            background-color: lightblue;
+            border: 1px solid black;
+            padding: 10px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="a">x2+
+    <input type="number" id="b">x+
+    <input type="number"id="c">=0
+
+    <input type="button" value="Calcular" onclick="segundoGrado()">
+    
+    <div style="display: flex; flex-direction: column;">
+        <div id="x1"></div>
+        <div id="x2"></div>
+
+    </div>
+
+    <script>
+        function segundoGrado() {
+            var a = parseInt(document.querySelector("a").value);
+            var b = parseInt(document.querySelector("b").value);
+            var c = parseInt(document.querySelector("c").value);
+
+            var discriminante = (b * b) - (4 * a * c);
+            var i = false;
+            var imaginario = "";
+            if (discriminante < 0) {
+                imaginario = "i";
+                i = true;
+                discriminante = discriminante*(-1);
+            }
+            var x1= (-b + Math.sqrt(discriminante)) / (2 * a);
+            var x2= (-b - Math.sqrt(discriminante)) / (2 * a);
+            document.getElementById("x1").innerHTML = "x1= " + x1 + imaginario;
+            document.getElementById("x2").innerHTML = "x2= " + x2 + imaginario;
+        }
+    </script>
+</body>
+</html>

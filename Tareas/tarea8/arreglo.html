@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*2.  Introducir un arreglo de 5 posiciones mediante prompt,
+    luego contar cuántos números pares hay en el arreglo  
+    e imprimir ese datos en el documento */
+
+    //let number = parseInt(prompt(`Introduce la cantidad de elementos`));
+
+    var Myarray= [];
+
+    // Llenamos el arreglo con los elementos introducidos por el usuario
+     for(let i=0; i<5; i++){
+        let numero =parseInt(prompt(`Introduce el elemento ${i+1}`));
+        Myarray.push(numero);
+     }
+
+    // Contador de numeros pares 
+    let contadorPares = 0;
+    
+    document.write(`<h2> Los elemento de nuestro Array</h2>`);
+     // Recorremos el array original
+    for(let i=0; i<Myarray.length; i++){
+
+        if(Myarray[i]%2 === 0){
+             contadorPares++;
+        };
+    }
+   
+    document.write(`Arreglo ingresado es [${Myarray}]<br>`);
+    document.write(`Cantidad de numeros pares ${contadorPares} `);
+
+    </script>
+</body>
+</html>
+ 

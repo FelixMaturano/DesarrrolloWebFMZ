@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            text-align: center;
+            font-weight: bold;
+        }
+        #opciones{
+            border: 2px solid yellow;
+            padding: 10px;
+            margin: 10px;
+        }
+        input[type="number"]{
+            border: 2px solid yellow;
+            width: 200px;
+            height: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+        #btn{
+            width: 60px;
+            margin-left: 0;
+            background-color: yellow;
+            font-weight: bold;
+            border: 2px solid yellow;
+        }
+        .mostrar{
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+        #resultado{
+            background-color: yellow;
+            width: 200px;
+            height: 30px;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Operacion</h2>
+        <select id="opciones">
+            <option value="sumar" >Sumar</option>
+            <option value="restar " >Restar</option>
+            <option value="multiplicar">Multiplicar</option>
+            <option value="dividir">Dividir</option>
+        </select><br>
+
+        <label for="a">A</label><br>
+        <input type="number" id="a"><br>
+
+        <label for="b">B</label><br>
+        <input type="number"id="b" >
+
+        <div class="mostrar">
+            <input type="button" value="calcular" id ="btn" onclick="calcular()">
+            <div id ="resultado"></div>
+        </div>
+
+        <script>
+            function calcular(){
+                const a = parseFloat(document.getElementById('a').value);
+                const b = parseFloat(document.getElementById('b').value);
+                var operacion = document.getElementById('opciones').value;
+                var resultado = document.getElementById('resultado');
+                
+                // Realizar la operacion selecionada
+                let r;
+                switch (operacion){
+                    case 'sumar':
+                        r = a + b;
+                        break;
+                    case 'restar':
+                        r = a - b;
+                        break;
+                    case 'multiplicar':
+                        r = a * b;
+                        break;
+                    case 'dividir':
+                        if(b === 0 ){
+                            resultado.innerHTML = 'No se puede dividir entre 0';
+                            return;
+                        }
+                        r = a/b;
+                        break;
+                    default:
+                        r = 'Operacion invalida';    
+                    }
+                resultado.innerHTML = `Resultado: ${r}`;
+            }
+    
+        
+        </script>
+    </div>
+</body>
+</html>
