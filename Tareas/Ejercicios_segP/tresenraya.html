@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tres en Raya</title>
+    <style>
+        #cuadros {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-left: 90px;
+        }
+
+        .fila {
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 24px;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+
+        #turno {
+            background-color: blue;
+            width: 100%;
+            margin: auto;
+            height: 40px;
+            text-align: center;
+            padding: auto;
+            color: white;
+            margin-top: 150px;
+            margin-left: 70px;
+        }
+        
+        #mensaje {
+            color: red;
+            text-align: center;
+            height: 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Juego Tres en Raya</h2>
+    
+    <div id="cuadros">
+        <div class="fila">
+            <input type="text" id="a1" maxlength="1">
+            <input type="text" id="a2" maxlength="1">
+            <input type="text" id="a3" maxlength="1">
+        </div>
+        <div class="fila">
+            <input type="text" id="b1" maxlength="1">
+            <input type="text" id="b2" maxlength="1">
+            <input type="text" id="b3" maxlength="1">
+        </div>
+        <div class="fila">
+            <input type="text" id="c1" maxlength="1">
+            <input type="text" id="c2" maxlength="1">
+            <input type="text" id="c3" maxlength="1">
+        </div>
+    </div>
+
+    <div id="turno">Turno X</div>
+    <div id="mensaje"></div>
+</body>
+</html>

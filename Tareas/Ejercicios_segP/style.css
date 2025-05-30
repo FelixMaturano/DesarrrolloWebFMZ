@@ -1,0 +1,48 @@
+#content{
+    display: flex;
+    border: 1px solid green;
+    height: 400px;
+    width: 80%;
+    margin: auto;
+}
+#menu {
+    border: 1px solid green;
+    flex-direction: column;
+    width: 25%;
+    justify-content: center;
+    display:flex;
+}
+
+
+#mensaje-global{
+    background-color: blue;
+    border: 1px solid black;
+    width: 80%;
+    margin: auto;
+    height: 40px;
+    text-align: center;
+    padding: auto;
+    color: white;
+}
+
+ul{
+    list-style-type: none;
+}
+ul a {
+    text-decoration: none;
+    border: 1px solid maroon;
+    padding: 10px;
+    display: block;
+    width: 10%;
+}
+
+#btn {
+    margin: 10px auto;
+    margin-left: 0px;
+}
+
+
+#btn {
+    margin: 10px auto;
+    justify-content: center;
+}
