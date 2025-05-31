@@ -1,7 +1,7 @@
 #content{
     display: flex;
     border: 1px solid green;
-    height: 400px;
+    height: auto;
     width: 80%;
     margin: auto;
 }

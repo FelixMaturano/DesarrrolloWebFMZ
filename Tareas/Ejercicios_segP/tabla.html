@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cuadros-text{
+            border: 1px solid black;
+            height: 100px;
+            width: 90%;
+            margin: auto;
+            margin-top: 150px;
+        }
+        /* Estilos para la tabla */
+.tabla-resultados {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+.tabla-resultados th, 
+.tabla-resultados td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.tabla-resultados th {
+    background-color: #f2f2f2;
+}
+    </style>
+</head>
+<body>
+    <div id="cuadros-text">
+        <label for="desde">Tabla del </label>
+        <input type="number" id="desde">
+        <label for="suma">suma</label>
+        <input type="checkbox" id="suma" name="operacion" value="sumar"> <!-- Agregado value -->
+        <label for="resta">resta</label>
+        <input type="checkbox" id="resta" name="operacion" value="restar"> <!-- Agregado value -->
+        <label for="multiplicar">multiplicar</label>
+        <input type="checkbox" id="multiplicar" name="operacion" value="multiplicar"> <!-- Nuevo campo -->
+        <label for="dividir">dividir</label>
+        <input type="checkbox" id="dividir" name="operacion" value="dividir"> <!-- Nuevo campo -->
+        <label for="hasta">Hasta el</label>
+        <input type="number" id="hasta">
+        <input type="button" id="generarTabla" value="Tabla"> <!-- Cambiado a type="button" -->
+    </div>
+    <div id="resultado-tabla"></div> <!-- Nuevo div para mostrar la tabla -->
+</body>
+</html>
