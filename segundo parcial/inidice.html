@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Diseño Web</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="principal">
+        <nav class="barra">
+            <div class="boton">Inicio</div>
+            <div class="boton"><a onclick="cargarContenido('galeria1.php','Pregunta 1')">Pregunta 1</a></div>
+            <div class="boton">Pregunta 2</div>
+
+            <div class="boton"><a onclick="crearTablaColores()">Pregunta 3</a></div>
+            <div class="boton"><a href="javascript:cargarContenido('read.php')">Pregunta 4</a></div>
+            <div id="menu"">Menu</div>
+        </nav>
+        <div id="contenido">
+            <h1>Segundo Examen Parcial de SIS-256</h1>
+            <p>Nombre Estudiante: <span>.....</span> </p>
+            <p>CU: <span>.....</span> </p>
+            <p>Fecha: <span>.....</span> </p>
+            <p>Numero Visitas: <span>.....</span> </p>.
+           
+        </div>
+        <div id="historial">
+            
+        </div>
+        <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="titulo-modal">Título del Modal</h2>
+            <div id="contenido-modal">
+
+            </div>
+        </div>
+    </div>
+        <script>
+            function cargarInicio() {
+            nombre=document.getElementsByTagName('span');
+                   nombre[0].innerHTML="Felix Maturano Zarate";
+                    nombre[1].innerHTML="111-531";
+                    nombre[2].innerHTML="31-05-2025";
+                    nombre[3].innerHTML="1";
+       
+                    console.log(parrafos);
+
+                    console.log(parrafos.lenght)
+                }
+        </script>
+        <script src="scripts.js"></script>
+    </div>
+</body>
+</html>
